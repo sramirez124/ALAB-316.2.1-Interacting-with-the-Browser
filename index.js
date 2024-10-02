@@ -3,6 +3,7 @@ const table = document.querySelector("table");
 
 const gameHeight = 10;
 const gameWidth = 10;
+
 let currentNumber = 1;
 const maxNumbers = 100;
 const answerNumber = Math.random(1, maxNumbers);
@@ -29,7 +30,6 @@ table.addEventListener("click", (evt) => {
   if (evt.target.localName !== "td") {
     return;
   }
-
-  //if ()
+  if (numberGuess)
   evt.target.style.backgroundColor = "red";
 });

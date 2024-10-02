@@ -31,4 +31,8 @@ body {
     border-color: #09507c;
     background-color: #deedf2;
   }
+
+  .div{
+    justify-content: center;
+  }
   
