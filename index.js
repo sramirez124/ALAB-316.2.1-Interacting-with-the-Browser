@@ -6,7 +6,9 @@ const gameWidth = 10;
 
 let currentNumber = 1;
 const maxNumbers = 100;
-const answerNumber = Math.random(1, maxNumbers);
+const randomNumber = Math.floor(Math.random() * 100) + 1;
+const answer = randomNumber.toString();
+console.log("Hey you're cheating! Well the answer is:" , answer);
 
 for (let i = 0; i < gameHeight; i++) {
   const tr = document.createElement("tr");
@@ -28,8 +30,16 @@ for (let i = 0; i < gameHeight; i++) {
 
 table.addEventListener("click", (evt) => {
   if (evt.target.localName !== "td") {
+    if (evt.target.textContent !== answer){
+
+        window.alert("Try again!");
+        evt.target.parentElement.style.backgroundColor = "red";
+
+    } else {
+        window.alert("You guess the right number!");
+        evt.target.parentElement.style.backgroundColor = "green";
+    }
     return;
-  }
-  if (numberGuess)
-  evt.target.style.backgroundColor = "red";
+  }  
 });
+// evt.target.style.backgroundColor = "red";
